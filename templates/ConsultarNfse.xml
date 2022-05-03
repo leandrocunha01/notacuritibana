@@ -1,0 +1,17 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ConsultarNfse xmlns="http://www.e-governeapps2.com.br/">
+            <ConsultarNfseEnvio>
+                <Prestador>
+                    <Cnpj>{{ .Empresa.Cnpj }}</Cnpj>
+                    <InscricaoMunicipal>{{ .Empresa.InscricaoMunicipal }}</InscricaoMunicipal>
+                </Prestador>
+                <PeriodoEmissao>
+                    <DataInicial>{{ .DataInicial }}</DataInicial>
+                    <DataFinal>{{ .DataFinal }}</DataFinal>
+                </PeriodoEmissao>
+            </ConsultarNfseEnvio>
+        </ConsultarNfse>
+    </soap:Body>
+</soap:Envelope>

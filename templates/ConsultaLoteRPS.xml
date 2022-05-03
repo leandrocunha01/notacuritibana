@@ -1,0 +1,14 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:e="http://www.e-governeapps2.com.br/">
+   <soap:Header/>
+   <soap:Body>
+      <ConsultarLoteRps>
+         <ConsultarLoteRpsEnvio>
+            <Prestador>               
+               <Cnpj>{{ .Cnpj }}</Cnpj>
+               <InscricaoMunicipal>{{ .InscriCaoMunicipal }}</InscricaoMunicipal>
+            </Prestador>            
+            <Protocolo>636809171476534394</Protocolo>
+         </ConsultarLoteRpsEnvio>
+      </ConsultarLoteRps>
+   </soap:Body>
+</soap:Envelope>
