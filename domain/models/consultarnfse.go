@@ -7,9 +7,12 @@ import (
 )
 
 type ConsultarNfse struct {
-	Empresa     *Empresa
-	DataInicial string
-	DataFinal   string
+	Prestador            *Prestador
+	DataInicial          string
+	DataFinal            string
+	NumeroNfse           int32
+	Tomador              *Tomador
+	IntermediarioServico *IntermediarioServico
 }
 
 func (consultaNfse *ConsultarNfse) Send() *http.Response {

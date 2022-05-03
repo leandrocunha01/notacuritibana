@@ -4,13 +4,47 @@
         <ConsultarNfse xmlns="http://www.e-governeapps2.com.br/">
             <ConsultarNfseEnvio>
                 <Prestador>
-                    <Cnpj>{{ .Empresa.Cnpj }}</Cnpj>
-                    <InscricaoMunicipal>{{ .Empresa.InscricaoMunicipal }}</InscricaoMunicipal>
+                    <Cnpj>{{ .Prestador.Cnpj }}</Cnpj>
+                    <InscricaoMunicipal>{{ .Prestador.InscricaoMunicipal }}</InscricaoMunicipal>
                 </Prestador>
+                {{ if .NumeroNfse }}
+                <NumeroNfse>{{ .NumeroNfse }}</NumeroNfse>
+                {{ end }}
+                {{ if .DataInicial}}
                 <PeriodoEmissao>
                     <DataInicial>{{ .DataInicial }}</DataInicial>
                     <DataFinal>{{ .DataFinal }}</DataFinal>
                 </PeriodoEmissao>
+                {{ end }}
+                {{ if .Tomador }}
+                <Tomador>
+                    <CpfCnpj>
+                        {{ if .Tomador.Cpf }}
+                        <Cpf>{{ .Tomador.Cpf }}</Cpf>
+                        {{ end }}
+                        {{ if .Tomador.Cnpj }}
+                        <Cnpj>{{ .Tomador.Cnpj }}</Cnpj>
+                        {{ end }}
+                    </CpfCnpj>
+                    {{ if .Tomador.InscricaoMunicipal }}
+                    <InscricaoMunicipal>{{ .Tomador.InscricaoMunicipal }}</InscricaoMunicipal>
+                    {{ end }}
+                </Tomador>
+                {{ end }}
+                {{ if .IntermediarioServico }}
+                <IntermediarioServico>
+                    <RazaoSocial>{{ .IntermediarioServico.RazaoSocial }}</RazaoSocial>
+                    <CpfCnpj>
+                        {{ if .IntermediarioServico.Cpf }}
+                        <Cpf>{{ .IntermediarioServico.Cpf }}</Cpf>
+                        {{ end }}
+                        {{ if .IntermediarioServico.Cnpj }}
+                        <Cnpj>{{ .IntermediarioServico.Cnpj }}</Cnpj>
+                        {{ end }}
+                    </CpfCnpj>
+                    <InscricaoMunicipal>{{ .IntermediarioServico.InscricaoMunicipal }}</InscricaoMunicipal>
+                </IntermediarioServico>
+                {{ end }}
             </ConsultarNfseEnvio>
         </ConsultarNfse>
     </soap:Body>
