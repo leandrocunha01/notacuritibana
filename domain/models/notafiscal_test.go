@@ -51,5 +51,6 @@ func TestModelNotaFiscal(t *testing.T) {
 		Servico:                  &servico,
 		Endereco:                 &endereco,
 	}
+
 	fmt.Println(notaFiscal)
 }

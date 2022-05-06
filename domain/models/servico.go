@@ -1,7 +1,9 @@
 package models
 
 type Servico struct {
-	Valores                float32
+	ItemListaServico       int32
+	Discriminacao          string
+	CodigoMunicipio        string
 	ValorServicos          float32
 	ValorDeducoes          float32
 	ValorPis               float32
@@ -18,7 +20,4 @@ type Servico struct {
 	ValorLiquidoNfse       float32
 	DescontoIncondicionado float32
 	DescontoCondicionado   float32
-	ItemListaServico       int32
-	Discriminacao          string
-	CodigoMunicipio        string
 }
