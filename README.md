@@ -6,6 +6,6 @@ Olá, este é um pequeno inicio de um projeto para consultas e emissões de nota
 
  - [x] Consultar Lote RPS
  - [x] Consultar Nfse
- - [ ] Emitir Nota (em desenvolvimento)
+ - [x] Emitir Nota
  - [ ] Cancelar Nota
  - [ ] Consultar Situação Lote RPS
