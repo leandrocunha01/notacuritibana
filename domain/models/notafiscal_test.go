@@ -7,7 +7,7 @@ import (
 )
 
 func TestModelNotaFiscal(t *testing.T) {
-	prestador := Prestador{Cnpj: "34553142000106", InscricaoMunicipal: "010508640391"}
+	/*prestador := Prestador{Cnpj: "34553142000106", InscricaoMunicipal: "010508640391"}
 	tomador := Tomador{Cnpj: "48479236000189", RazaoSocial: "JMM Serviços de Logística"}
 	servico := Servico{
 		ItemListaServico:       1,
@@ -49,8 +49,7 @@ func TestModelNotaFiscal(t *testing.T) {
 		IncentivadorCultural:     0,
 		Status:                   1,
 		Servico:                  &servico,
-		Endereco:                 &endereco,
-	}
+	}*/
 
-	fmt.Println(notaFiscal)
+	fmt.Println(time.Now().Format("2006-01-02T15:04:05"))
 }

@@ -6,4 +6,5 @@ type Tomador struct {
 	InscricaoMunicipal string
 	RazaoSocial        string
 	Email              string
+	Endereco           *Endereco
 }
