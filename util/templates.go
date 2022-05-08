@@ -10,6 +10,7 @@ func TemplateXmlNfse(templateName string, model any) *bytes.Buffer {
 	paths := []string{
 		"/home/leandro/GolandProjects/notacuritibana/templates/ConsultarNfse.xml",
 		"/home/leandro/GolandProjects/notacuritibana/templates/ConsultaLoteRPS.xml",
+		"/home/leandro/GolandProjects/notacuritibana/templates/NotaFiscal.xml",
 	}
 
 	t := template.Must(template.New(templateName).ParseFiles(paths...))

@@ -1,0 +1,84 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:e="http://www.e-governeapps2.com.br/" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+   <soap:Header/>
+   <soap:Body>
+      <e:RecepcionarLoteRps>
+         <e:EnviarLoteRpsEnvio>
+            <e:LoteRps>
+               <e:NumeroLote>{{ .NumeroLote }}</e:NumeroLote>
+               <e:Cnpj>{{ .Prestador.Cnpj }}</e:Cnpj>
+               <e:InscricaoMunicipal>{{ .Prestador.InscricaoMunicipal }}</e:InscricaoMunicipal>
+               <e:QuantidadeRps>{{ .QuantidadeRps }}</e:QuantidadeRps>
+               <e:ListaRps>
+                  <e:Rps>
+                     <e:InfRps>
+                        <e:IdentificacaoRps>
+                           <e:Numero>{{ .Numero }}</e:Numero>
+                           <e:Serie>{{ .Serie }}</e:Serie>
+                           <e:Tipo>{{ .Tipo }}</e:Tipo>
+                        </e:IdentificacaoRps>
+                        <e:DataEmissao>{{ .DataEmissao.Format "2006-01-02T15:04:05" }}</e:DataEmissao>
+                        <e:NaturezaOperacao>{{ .NaturezaOperacao }}</e:NaturezaOperacao>
+                        <e:RegimeEspecialTributacao>{{ .RegimeEspecialTributacao }}</e:RegimeEspecialTributacao>
+                        <e:OptanteSimplesNacional>{{ .OptanteSimplesNacional }}</e:OptanteSimplesNacional>
+                        <e:IncentivadorCultural>{{ .IncentivadorCultural }}</e:IncentivadorCultural>
+                        <e:Status>{{ .Status }}</e:Status>
+                        <e:Servico>
+                           <e:Valores>
+                              <e:ValorServicos>{{ .Servico.ValorServicos }}</e:ValorServicos>
+                              <e:ValorDeducoes>{{ .Servico.ValorDeducoes }}</e:ValorDeducoes>
+                              <e:ValorPis>{{ .Servico.ValorPis }}</e:ValorPis>
+                              <e:ValorCofins>{{ .Servico.ValorCofins }}</e:ValorCofins>
+                              <e:ValorInss>{{ .Servico.ValorInss }}</e:ValorInss>
+                              <e:ValorIr>{{ .Servico.ValorIr }}</e:ValorIr>
+                              <e:ValorCsll>{{ .Servico.ValorCsll }}</e:ValorCsll>
+                              <e:IssRetido>{{ .Servico.IssRetido }}</e:IssRetido>
+                              <e:ValorIss>{{ .Servico.ValorIss }}</e:ValorIss>
+                              <e:ValorIssRetido>{{ .Servico.ValorIssRetido }}</e:ValorIssRetido>
+                              <e:OutrasRetencoes>{{ .Servico.OutrasRetencoes }}</e:OutrasRetencoes>
+                              <e:BaseCalculo>{{ .Servico.BaseCalculo }}</e:BaseCalculo>
+                              <e:Aliquota>{{ .Servico.Aliquota }}</e:Aliquota>
+                              <e:ValorLiquidoNfse>{{ .Servico.ValorLiquidoNfse }}</e:ValorLiquidoNfse>
+                              <e:DescontoIncondicionado>{{ .Servico.DescontoIncondicionado }}</e:DescontoIncondicionado>
+                              <e:DescontoCondicionado>{{ .Servico.DescontoCondicionado }}</e:DescontoCondicionado>
+                           </e:Valores>
+                           <e:ItemListaServico>{{ .Servico.ItemListaServico }}</e:ItemListaServico>
+                           <e:Discriminacao>{{ .Servico.Discriminacao }}</e:Discriminacao>
+                           <e:CodigoMunicipio>{{ .Servico.CodigoMunicipio }}</e:CodigoMunicipio>
+                        </e:Servico>
+                        <e:Prestador>
+                           <e:Cnpj>{{ .Prestador.Cnpj }}</e:Cnpj>
+                           <e:InscricaoMunicipal>{{ .Prestador.InscricaoMunicipal }}</e:InscricaoMunicipal>
+                        </e:Prestador>
+                        <e:Tomador>
+                           <e:IdentificacaoTomador>
+                              <e:CpfCnpj>
+                                 {{ if .Tomador.Cnpj }}
+                                 <e:Cnpj>{{ .Tomador.Cnpj }}</e:Cnpj>
+                                 {{ end }}
+                                 {{ if .Tomador.Cpf }}
+                                 <e:Cnpj>.Tomador.Cpf</e:Cnpj>
+                                 {{ end }}
+                              </e:CpfCnpj>
+                           </e:IdentificacaoTomador>
+                           <e:RazaoSocial>{{ .Tomador.RazaoSocial }}</e:RazaoSocial>
+                           <e:Endereco>
+                              <e:Endereco> {{ .Tomador.Endereco.Endereco }}</e:Endereco>
+                              <e:Numero> {{ .Tomador.Endereco.Numero }}</e:Numero>
+                              <e:Complemento> {{ .Tomador.Endereco.Complemento }}</e:Complemento>
+                              <e:Bairro> {{ .Tomador.Endereco.Bairro }}</e:Bairro>
+                              <e:CodigoMunicipio> {{ .Tomador.Endereco.CodigoMunicipio }}</e:CodigoMunicipio>
+                              <e:Uf> {{ .Tomador.Endereco.Uf }}</e:Uf>
+                              <e:Cep> {{ .Tomador.Endereco.Cep }}</e:Cep>
+                           </e:Endereco>
+                           <e:Contato>
+                              <e:Email>{{ .Tomador.Email }}</e:Email>
+                           </e:Contato>
+                        </e:Tomador>
+                     </e:InfRps>
+                  </e:Rps>
+               </e:ListaRps>
+            </e:LoteRps>
+         </e:EnviarLoteRpsEnvio>
+      </e:RecepcionarLoteRps>
+   </soap:Body>
+</soap:Envelope>

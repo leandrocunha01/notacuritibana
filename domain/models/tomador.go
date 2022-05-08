@@ -4,4 +4,7 @@ type Tomador struct {
 	Cpf                string
 	Cnpj               string
 	InscricaoMunicipal string
+	RazaoSocial        string
+	Email              string
+	Endereco           *Endereco
 }
