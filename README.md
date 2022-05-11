@@ -7,5 +7,5 @@ Olá, este é um pequeno inicio de um projeto para consultas e emissões de nota
  - [x] Consultar Lote RPS
  - [x] Consultar Nfse
  - [x] Emitir Nota
- - [ ] Cancelar Nota
- - [ ] Consultar Situação Lote RPS
+ - [X] Cancelar Nota
+ - [X] Consultar Situação Lote RPS
