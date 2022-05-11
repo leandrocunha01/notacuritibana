@@ -1,21 +1,17 @@
-package appliccation
+package application
 
 import (
 	"crypto/tls"
-	"github.com/joho/godotenv"
+	"github.com/leandrocunha01/notacuritibana/util"
 	"io"
 	"log"
 	"net/http"
-	"os"
 )
 
 func NfseClient(xmlModel io.Reader) *http.Response {
-	err := godotenv.Load("../.env")
-	if err != nil {
-		log.Fatalf("Some error occured .env file. Err: %s", err)
-	}
-	certificate := os.Getenv("CERT")
-	keyfile := os.Getenv("CERT_KEY")
+
+	certificate := util.Env("CERT")
+	keyfile := util.Env("CERT_KEY")
 	cert, err := tls.LoadX509KeyPair(certificate, keyfile)
 	if err != nil {
 		log.Fatal(err)

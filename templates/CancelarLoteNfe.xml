@@ -1,0 +1,26 @@
+﻿<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:e="http://www.e-governeapps2.com.br/" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+   <soap:Header/>
+   <soap:Body>
+      <e:CancelarLoteNfse>
+         <e:CancelarLoteNfseEnvio>
+            <e:LoteCancelamento>
+               <e:Cnpj>{{ .Prestador.Cnpj }}</e:Cnpj>
+               <e:InscricaoMunicipal>{{ .Prestador.InscricaoMunicipal }}</e:InscricaoMunicipal>
+               <e:PedidosCancelamento>
+                  <e:PedidoCancelamento>
+                     <e:InfPedidoCancelamento>
+                        <e:IdentificacaoNfse>
+                           <e:Numero>{{ .NumeroNfse }}</e:Numero>
+                           <e:Cnpj>{{ .Prestador.Cnpj }}</e:Cnpj>
+                           <e:InscricaoMunicipal>{{ .Prestador.InscricaoMunicipal }}</e:InscricaoMunicipal>
+                           <e:CodigoMunicipio>{{ .CodigoMunicipio }}</e:CodigoMunicipio>
+                        </e:IdentificacaoNfse>
+                        <e:CodigoCancelamento>1</e:CodigoCancelamento>
+                     </e:InfPedidoCancelamento>
+                  </e:PedidoCancelamento>
+               </e:PedidosCancelamento>
+            </e:LoteCancelamento>
+         </e:CancelarLoteNfseEnvio>
+      </e:CancelarLoteNfse>
+   </soap:Body>
+</soap:Envelope>

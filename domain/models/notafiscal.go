@@ -2,7 +2,7 @@ package models
 
 import (
 	"bytes"
-	"github.com/leandrocunha01/notacuritibana/appliccation"
+	"github.com/leandrocunha01/notacuritibana/application"
 	"github.com/leandrocunha01/notacuritibana/util"
 	"net/http"
 	"time"
@@ -28,10 +28,10 @@ type NotaFiscal struct {
 func (notaFiscal *NotaFiscal) Send() *http.Response {
 	xmlTemplate := util.TemplateXmlNfse("NotaFiscal.xml", &notaFiscal)
 
-	return appliccation.NfseClient(xmlTemplate)
+	return application.NfseClient(xmlTemplate)
 }
 
-func (notaFiscal NotaFiscal) Xml() *bytes.Buffer {
+func (notaFiscal *NotaFiscal) Xml() *bytes.Buffer {
 	xmlTemplate := util.TemplateXmlNfse("NotaFiscal.xml", &notaFiscal)
 	return xmlTemplate
 }
