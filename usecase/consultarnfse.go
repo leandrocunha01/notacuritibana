@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/leandrocunha01/notacuritibana/appliccation"
+	"github.com/leandrocunha01/notacuritibana/application"
 	"github.com/leandrocunha01/notacuritibana/domain/models"
 	"github.com/leandrocunha01/notacuritibana/util"
 	"net/http"
@@ -19,5 +19,5 @@ type ConsultarNfse struct {
 func (consultaNfse *ConsultarNfse) Send() *http.Response {
 	xmlTemplate := util.TemplateXmlNfse("ConsultarNfse.xml", &consultaNfse)
 
-	return appliccation.NfseClient(xmlTemplate)
+	return application.NfseClient(xmlTemplate)
 }
